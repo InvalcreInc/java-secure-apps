@@ -1,0 +1,21 @@
+grant {
+    permission java.io.FilePermission "/home/wabira/Documents", "read";
+    permission java.io.FilePermission "/tmp/passwords.txt", "read";
+    permission java.net.SocketPermission "*:1024-", "connect,accept";
+    permission java.util.PropertyPermission "java.version", "read";
+    permission java.lang.RuntimePermission "stopThread";
+    permission javax.security.auth.AuthPermission "modifyPrincipals";
+    permission javax.security.auth.AuthPermission "createLoginContext.jaasApplication";
+    permission javax.security.auth.login.LoginPermission "*";
+    permission java.util.PropertyPermission "com.sun.security.auth.UserPrincipal" ,"write";
+    permission java.security.SecurityPermission "getPolicy";
+    permission javax.security.auth.AuthPermission "doAsPrivileged";
+};
+
+grant principal com.sun.security.auth.UserPrincipal "bonch" {
+    permission java.io.FilePermission "/tmp/lab6.txt", "read";
+};
+
+grant principal com.sun.security.auth.UserPrincipal "student" {
+    permission java.io.FilePermission "/tmp/lab6.txt", "write";
+};
