@@ -19,15 +19,11 @@ This repository contains a series of labs focused on security applications in Ja
 
 2. Make the script executable:
 
-   ```bash
-   chmod +x lab_script.sh
-   ```
+```bash
+sudo chmod +x run.sh
+```
 
 3. Run the script:
-
-```bash
- sudo chmod +x run.sh
-```
 
 ```bash
 ./run.sh
