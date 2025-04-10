@@ -5,11 +5,21 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import com.gm.utils.ConsoleReader;
+
 public class Main {
-    private static final String FILENAME = "/home/wabira/Documents/security apps/labs/outputs/lab4/lab4.sh";
+    private static final String FILENAME = "/home/wabira/Documents/security apps/labs/labs/src/main/java/com/gm/lab4/lab4.sh";
 
     public static void main(String[] args) {
-        boolean allowAll = args.length > 0 && args[0].equals("allow");
+        boolean allowAll;
+        ConsoleReader reader = new ConsoleReader();
+        if (args.length > 0) {
+            allowAll = args[0].equals("allow");
+        } else {
+            String value = reader.read("Do you want to allow permissions? (Y/n): ");
+            allowAll = value.equalsIgnoreCase("y") || value.equalsIgnoreCase("yes");
+        }
+
         File file = new File(FILENAME);
         System.out.println("File name: " + FILENAME);
         if (file.exists()) {

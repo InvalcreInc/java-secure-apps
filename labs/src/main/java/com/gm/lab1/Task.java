@@ -29,7 +29,7 @@ public class Task {
                 .map(l -> calculate(l))
                 .collect(Collectors.toCollection(ArrayList::new));
         String[] contents = format(calculations, lines);
-        new ExpWriter("calculations.txt", contents).write();
+        new ExpWriter("labs/src/main/java/com/gm/lab1/calculations.txt", contents).write();
     }
 
     /**
